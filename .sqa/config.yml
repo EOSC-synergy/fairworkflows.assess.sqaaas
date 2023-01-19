@@ -1,0 +1,68 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.7
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/fair-workflows/fairworkflows:
+      branch: main
+      repo: https://github.com/fair-workflows/fairworkflows
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/fair-workflows/fairworkflows git:
+        commands:
+        - /usr/bin/env sh .sqa/script.zippy-platinum-avocet.sh
+        container: qc.acc_pasty-charcoal-ant
+  QC.Doc:
+    repos:
+      github.com/fair-workflows/fairworkflows find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.cheeky-silver-barracuda.sh
+        container: qc.doc_woolly-thistle-indri
+      github.com/fair-workflows/fairworkflows git:
+        commands:
+        - /usr/bin/env sh .sqa/script.shabby-salmon-wasp.sh
+        container: qc.doc_cozy-champagne-mastiff
+      github.com/fair-workflows/fairworkflows markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.flabby-fuchsia-zebu.sh
+        container: qc.doc_paltry-puce-turkey
+      github.com/fair-workflows/fairworkflows restructuredtext-lint:
+        commands:
+        - /usr/bin/env sh .sqa/script.tasty-heliotrope-salamander.sh
+        container: qc.doc_queasy-sepia-snake
+  QC.Lic:
+    repos:
+      github.com/fair-workflows/fairworkflows licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.crabby-cerise-sheep.sh
+        container: qc.lic_wiggy-cornflower-loon
+  QC.Met:
+    repos:
+      github.com/fair-workflows/fairworkflows cff-converter-python:
+        commands:
+        - /usr/bin/env sh .sqa/script.crabby-seashell-dollar.sh
+        container: qc.met_crabby-charcoal-bear
+  QC.Sec:
+    repos:
+      github.com/fair-workflows/fairworkflows bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.gummy-platinum-penguin.sh
+        container: qc.sec_hasty-zucchini-cuscus
+  QC.Sty:
+    repos:
+      github.com/fair-workflows/fairworkflows flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.hilly-orange-weasel.sh
+        container: qc.sty_shabby-alizarin-leopard
+  QC.Ver:
+    repos:
+      github.com/fair-workflows/fairworkflows get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.ready-platinum-raccoon.sh
+        container: qc.ver_craggy-cream-termite
+timeout: 5400
