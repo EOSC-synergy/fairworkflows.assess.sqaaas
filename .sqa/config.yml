@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/1.7.7
+      branch: release/1.7.8
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/fair-workflows/fairworkflows:
       branch: main
@@ -15,54 +15,54 @@ sqa_criteria:
     repos:
       github.com/fair-workflows/fairworkflows git:
         commands:
-        - /usr/bin/env sh .sqa/script.skimpy-cobalt-weasel.sh
-        container: qc.acc_craggy-pumpkin-squirrel
+        - /usr/bin/env sh .sqa/script.sickly-smalt-dormouse.sh
+        container: qc.acc_cloudy-wheat-gorilla
   QC.Doc:
     repos:
       github.com/fair-workflows/fairworkflows find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.sickly-turquoise-mau.sh
-        container: qc.doc_gimpy-vermilion-ocelot
+        - /usr/bin/env sh .sqa/script.cozy-peach-dingo.sh
+        container: qc.doc_geeky-pumpkin-dragonfly
       github.com/fair-workflows/fairworkflows git:
         commands:
-        - /usr/bin/env sh .sqa/script.hilly-ultramarine-okapi.sh
-        container: qc.doc_ready-amaranth-monster
+        - /usr/bin/env sh .sqa/script.smelly-violet-horse.sh
+        container: qc.doc_lousy-red-chow
       github.com/fair-workflows/fairworkflows markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.homey-gold-cichlid.sh
-        container: qc.doc_geeky-burgundy-hyrax
+        - /usr/bin/env sh .sqa/script.gloppy-copper-owl.sh
+        container: qc.doc_sleazy-firebrick-capybara
       github.com/fair-workflows/fairworkflows restructuredtext-lint:
         commands:
-        - /usr/bin/env sh .sqa/script.skinny-emerald-boar.sh
-        container: qc.doc_surly-celadon-sparrow
+        - /usr/bin/env sh .sqa/script.cranky-grey-mastiff.sh
+        container: qc.doc_gloppy-tangerine-wolfhound
   QC.Lic:
     repos:
       github.com/fair-workflows/fairworkflows licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.geeky-white-dhole.sh
-        container: qc.lic_shaky-buff-capybara
+        - /usr/bin/env sh .sqa/script.bluesy-malachite-fowl.sh
+        container: qc.lic_thirsty-cardinal-lemming
   QC.Met:
     repos:
       github.com/fair-workflows/fairworkflows cff-converter-python:
         commands:
-        - /usr/bin/env sh .sqa/script.crappy-celadon-gopher.sh
-        container: qc.met_stealthy-sapphire-iguana
+        - /usr/bin/env sh .sqa/script.cheeky-myrtle-balinese.sh
+        container: qc.met_hilly-dandelion-argentino
   QC.Sec:
     repos:
       github.com/fair-workflows/fairworkflows bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.ready-cinnamon-hyrax.sh
-        container: qc.sec_crabby-persimmon-drever
+        - /usr/bin/env sh .sqa/script.lumpy-rust-rottweiler.sh
+        container: qc.sec_clammy-teal-binturong
   QC.Sty:
     repos:
       github.com/fair-workflows/fairworkflows flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.fuzzy-taupe-falcon.sh
-        container: qc.sty_seedy-myrtle-stingray
+        - /usr/bin/env sh .sqa/script.hazy-salmon-whale.sh
+        container: qc.sty_crabby-maroon-bloodhound
   QC.Ver:
     repos:
       github.com/fair-workflows/fairworkflows get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.bumpy-tangerine-gopher.sh
-        container: qc.ver_leaky-indigo-koala
+        - /usr/bin/env sh .sqa/script.boozy-persimmon-tarantula.sh
+        container: qc.ver_skinny-razzmatazz-raccoon
 timeout: 5400
